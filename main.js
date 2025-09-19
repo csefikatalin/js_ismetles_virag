@@ -5,25 +5,28 @@ KEPEK mappa
 Virag osztály - egyetlen virág megjelenításe
 
 */
-import { viragLista } from "./adat.js";
-import AdminViragok from "./AdminViragok.js";
-import Viragok from "./Viragok.js";
+import ViragokController from "./controller/ViragokController.js";
+//import AdminViragok from "./view/admin/AdminViragok.js";
+
+/* példányosítom a controllereket */
+new ViragokController();
 
 document.getElementById("virag").addEventListener("click", () => {
-    document.querySelector("article").innerHTML = ""
-    new Viragok(viragLista, document.querySelector("article"))
+   new ViragokController(); 
 })
+
+/* 
 document.getElementById("admin").addEventListener("click", () => {
     document.querySelector("article").innerHTML = ""
     new AdminViragok(viragLista, document.querySelector("article"))
-})
+}) */
 
-window.addEventListener("kivalaszt", (event) => {
+
+
+
+/* window.addEventListener("torol", (event) => {
     console.log(event.detail)
-})
-window.addEventListener("torol", (event) => {
-    console.log(event.detail)
-})
+}) */
 
 
 /* legyen egy admin felület, ahol táblázatosan listázom a virágokat és ott legyen egy űrlap is, ahol új virágot tudok felvinni 
